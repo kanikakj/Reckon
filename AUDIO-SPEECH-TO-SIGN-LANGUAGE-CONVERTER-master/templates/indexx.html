@@ -1,4 +1,3 @@
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -10,27 +9,77 @@
     <title>| SignHub |</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
     <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.png' %}" />
-    <link rel=
+    <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style type="text/css">
         body {
             width: 100%;
-            background: url({% static 'img/SIGN HUB.png' %}) ;
+            background: url({% static 'img/SIGN HUB.gif' %}) ;
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+        }
+        .button-30 {
+            margin-left : 60%;
+            align-items: center;
+            appearance: none;
+            background-color: #FCFCFD;
+            border-radius: 10px;
+            border-width: 0;
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+            box-sizing: border-box;
+            background-color: #04AA6D;
+            color: #ffffff;
+            border-color: #04AA6D;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: 'Lora', serif;
+            height: 48px;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow .15s,transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow,transform;
+            font-size: 45px;
+        }
+
+        .button-30:focus {
+            box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        }
+
+        .button-30:hover {
+            box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .button-30:active {
+            box-shadow: #D6D6E7 0 3px 7px inset;
+            transform: translateY(2px);
         }
     </style>
 </head>
 <body>
     <center>
         <div class="intro">
-            {% comment %} <h1> SignHub </h1>
-			<h5> No voice left unheard, no sign unseen </h5> {% endcomment %}
-            <a href="{% url 'home' %}" class="btn btn-outline-success"> User Login </a>;
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            
+                <a href="{% url 'home' %}" class="button-30 btn-outline-success"> Get Started </a>
             {% comment %} <a href="{% url 'register' %}" class="btn"> register </a>;
             <a href="{% url 'about' %}" class="btn"> About Us </a>;
             <a href="{% url 'admin' %}" class="btn"> Admin Login </a>; {% endcomment %}
+            
         </div>
     </center>
 </body>

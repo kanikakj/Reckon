@@ -1,39 +1,107 @@
-{% extends 'base.html' %}
 {% load static %}
 
-
-{% block content %}
-<div class="split left">
-	<h2 align="center">Enter Text or Use Mic</h2>
-	<br>
-		<form action="" method="post" align="left">
-		{% csrf_token %}
-					<input type="text" name="sen" class="mytext" id="speechToText" placeholder="">
-					<button type="button" name="button" class="mic" onclick="record()"><img src="{% static 'mic3.png' %}" height="32px" width="38px" /></button>
-		  			&nbsp&nbsp&nbsp&nbsp
-		  			<input type="submit" name="submit" class="submit">
-
-		</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SignHub</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+	<nav class="navbar">
+		<img src="{% static 'img/logo.png'%}"  alt="Logo" class="logo"> 
+		<a class="active" href="{% url 'home' %}">Home</a>
+		<a href="{% url 'animation' %}">Convertor</a>
+		{% if not user.is_authenticated %}
+		<a href="{% url 'signup' %}">Sign Up</a>
+		{% endif %}
+		{% if user.is_authenticated %}
+		<a href="{% url 'logout' %}">Log-Out</a>
+		{% else %}
+		<a href="{% url 'login' %}">Log-in</a>
+		{% endif %}
+		<a href="{% url 'about' %}">About</a>
+	</nav>
+	<!--Stylesheet-->
+	<style media="screen">
+			*,
+		*:before,
+		*:after{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		body{
+			background-color: #ffffff;
+		}
+		.center {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 50%;
+		}
+			/* Style for navigation bar */
+			.navbar {
+				display: flex;
+				align-items: center;
+				background-color: #000000;
+				color: #FFFFFF;
+				height: 70px;
+				padding: 0 20px;
+				font-size: 25px;
+			}
+			.navbar a {
+			color: #FFFFFF;
+			text-decoration: none;
+			margin: 0 10px;
+			}
+			a:hover{
+			color: #365B6D;
+			background-color: #FFFFFF;
+			text-decoration: none;
+			padding: 19px;
+			border: solid 1px #555;
+			
+			}
+			.logo {
+			height: 50px;
+			margin-right: auto;
+			}
+		</style>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+	</head>
+	<body>
+	<div class="split left">
+		<h2 align="center">Enter Text or Use Mic</h2>
 		<br>
-		<table cellspacing="20px">
-			<tr>
-				<td class="td">The text that you entered is:</td>
-				<td class="td">{{ text }}</td>
-			</tr>
-			<tr>
-				<td class="td">Key words in sentence:</td>
-				<td class="td">
-				<ul class="td" id="list" align="center">
-  					{% for word in words %}
-    				<li id="{{ i }}" style="margin-right: 8px">{{ word }}</li>
-  					{% endfor %}
-				</ul>
-			</td>
-		</tr>
-	</table></div>
+			<form action="" method="post" align="left">
+			{% csrf_token %}
+						<input type="text" name="sen" class="mytext" id="speechToText" placeholder="">
+						<button type="button" name="button" class="mic" onclick="record()"><img src="{% static 'mic3.png' %}" height="32px" width="38px" /></button>
+						&nbsp&nbsp&nbsp&nbsp
+						<input type="submit" name="submit" class="submit">
 
-  <div class="split right">
-  <h2 align="center">Sign Language Animation</h2>
+			</form>
+			<br>
+			<table cellspacing="20px">
+				<tr>
+					<td class="td">The text that you entered is:</td>
+					<td class="td">{{ text }}</td>
+				</tr>
+				<tr>
+					<td class="td">Key words in sentence:</td>
+					<td class="td">
+					<ul class="td" id="list" align="center">
+						{% for word in words %}
+						<li id="{{ i }}" style="margin-right: 8px">{{ word }}</li>
+						{% endfor %}
+					</ul>
+				</td>
+			</tr>
+		</table></div>
+
+	<div class="split right">
+	<h2 align="center">Sign Language Animation</h2>
 
 	<div style="text-align:center">	&nbsp&nbsp
   	<button class="submit" onclick="playPause()">Play/Pause</button>
@@ -49,8 +117,8 @@
     Your browser does not support HTML5 video.
   	</video>
   	</div></div>
-
-
+</body>
+</html>
 <script>
 	//webkitSpeechRecognition api for speech to text conversion
 	function record(){
@@ -131,4 +199,4 @@
 	</script>
 
 
-{% endblock %}
+

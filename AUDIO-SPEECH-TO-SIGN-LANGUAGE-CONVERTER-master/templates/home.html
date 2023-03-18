@@ -1,13 +1,210 @@
-{% extends 'base.html' %}
+
 {% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SignHub</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    {% comment %} <link rel="preconnect" href="https://fonts.gstatic.com"> {% endcomment %}
+    {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> {% endcomment %}
+    <nav class="navbar">
+        <img src="{% static 'img/logo.png'%}"  alt="Logo" class="logo"> 
+        <a class="active" href="{% url 'home' %}">Home</a>
+        <a href="{% url 'animation' %}">Convertor</a>
+        {% if not user.is_authenticated %}
+        <a href="{% url 'signup' %}">Sign Up</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Log-Out</a>
+        {% else %}
+        <a href="{% url 'login' %}">Log-in</a>
+        {% endif %}
+        <a href="{% url 'about' %}">About</a>
+      </nav>
+	  <!--Stylesheet-->
+    <style media="screen">
+			*,
+		*:before,
+		*:after{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		body{
+			background-color: #ffffff;
+			font-family: 'Lora', serif;
+		}
+		.center {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 50%;
+		}
+			/* Style for navigation bar */
+			.navbar {
+				display: flex;
+				align-items: center;
+				background-color: #000000;
+				color: #FFFFFF;
+				height: 70px;
+				padding: 0 20px;
+				font-size: 25px;
+			}
+			.navbar a {
+			color: #FFFFFF;
+			text-decoration: none;
+			margin: 0 10px;
+			}
+			a:hover{
+			color: #365B6D;
+			background-color: #FFFFFF;
+			text-decoration: none;
+			padding: 19px;
+			border: solid 1px #555;
+			
+			}
+			.logo {
+			height: 50px;
+			margin-right: auto;
+			}
+			/* about css */
+			body {
+				font-family: 'Open Sans', sans-serif;
+				height: 100vh;
+				margin: 0;
+			}
+			.container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 10px;
+				background-color: #f2f2f2;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+				transition: box-shadow 0.3s ease;
+				cursor: pointer;
+				width: 80%px;
+				height: 40%;
+				overflow: hidden;
+				margin:5%;
+			}
+			.container:hover {
+				box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+			}
+			.text {
+				flex: 1;
+				padding-right: 20px;
+			}
+			.text h2 {
+				font-size: 24px;
+				margin-bottom: 10px;
+			}
+			.text p {
+				font-size: 16px;
+				line-height: 1.5;
+			}
+			.image {
+				flex: 1;
+				height: 100%;
+				overflow: hidden;
+				position: relative;
+				animation: float 3s ease-in-out infinite;
+			}
+			.image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			@keyframes float {
+				0% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(-10px);
+				}
+				100% {
+					transform: translateY(0);
+				}
+			}
+			
+			.button-30 {
+				margin-center : auto;
+				align-items: center;
+				appearance: none;
+				background-color: #FCFCFD;
+				border-radius: 10px;
+				border-width: 0;
+				box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+				background-color: #000000;
+				color: #ffffff;
+				border-color: #04AA6D;
+				cursor: pointer;
+				display: inline-flex;
+				font-family: 'Lora', serif;
+				height: 48px;
+				justify-content: center;
+				line-height: 1;
+				list-style: none;
+				overflow: hidden;
+				padding-left: 16px;
+				padding-right: 16px;
+				position: relative;
+				text-align: left;
+				text-decoration: none;
+				transition: box-shadow .15s,transform .15s;
+				user-select: none;
+				-webkit-user-select: none;
+				touch-action: manipulation;
+				white-space: nowrap;
+				will-change: box-shadow,transform;
+				font-size: 45px;
+			}
+	
+			.button-30:focus {
+				box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+			}
+	
+			.button-30:hover {
+				box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+				transform: translateY(-2px);
+			}
+	
+			.button-30:active {
+				box-shadow: #D6D6E7 0 3px 7px inset;
+				transform: translateY(2px);
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="image">
+			<img src="{% static 'img/hands.gif'%}" height =500 width= 500 alt="Image">
+		</div>		
 
-{% block content %}
-<video width="500" height="380" class="center" autoplay loop>
-  <source src= "{% static 'Hello.mp4' %}" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-	<div class="form-style" align="middle" >
-	<a href="{% url 'animation' %}"><button class="button">Click to Launch</button></a>
-	</div>
-{% endblock %}
+		<h1 align= "center">OUR VISION</h1>
+
+		<div class="container">
+			<div class="text">
+				<h2>About Sign Hub</h2>
+				<p>In India, there are 63 million people, who have hearing impairments, according to the 2011 census. Among them, 76–89% of the hearing-impaired Indian population is illiterate in spoken, signed, or written languages. The absence of sign language interpreters and the lack of Indian Sign Language tools creates a communication gap between normal and hearing-impaired people. SignHub is a one stop platform where members of the hard of hearing community can engage in daily activities like socialising and can access information just like hearing individuals. It breaks the barrier of communication between normal and hearing-impaired people, making the interaction simpler and faster.</p>
+			</div>
+			<div class="image">
+				<img src="{% static 'img/handsign.gif'%}" alt="Image">
+			</div>
+		</div>
+		
+		<video width="800" height="500" class="center" autoplay loop>
+			<source src= "{% static 'Hello.mp4' %}" type="video/mp4">
+				Your browser does not support the video tag.
+		</video>
+		<div class="form-style" align="middle" >
+		<a href="{% url 'animation' %}"><button class="button-30 btn-outline-success"> Click to Launch </button></a>
+		</div>
+	</body>
+</html>
