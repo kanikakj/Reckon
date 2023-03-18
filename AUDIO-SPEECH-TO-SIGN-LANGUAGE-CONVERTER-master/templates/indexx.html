@@ -1,0 +1,38 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>| SignHub |</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.png' %}" />
+    <link rel=
+    <style type="text/css">
+        body {
+            width: 100%;
+            background: url({% static 'img/SIGN HUB.png' %}) ;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="intro">
+            {% comment %} <h1> SignHub </h1>
+			<h5> No voice left unheard, no sign unseen </h5> {% endcomment %}
+            <a href="{% url 'home' %}" class="btn btn-outline-success"> User Login </a>;
+            {% comment %} <a href="{% url 'register' %}" class="btn"> register </a>;
+            <a href="{% url 'about' %}" class="btn"> About Us </a>;
+            <a href="{% url 'admin' %}" class="btn"> Admin Login </a>; {% endcomment %}
+        </div>
+    </center>
+</body>
+</html>
+

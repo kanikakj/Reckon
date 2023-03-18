@@ -1,0 +1,367 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <div style="background-color:#F8F9F9 ;color:#AF7AC5 ;padding:10 10 1 10;border: 1px #808B96 groove;margin-bottom:0;">
+    <h1 align=center>SignHub - No voice left unheard, no sign unseen</h1>
+  </div>
+
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+ <!-- Favicons -->
+ <link href="static/img/fav.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+ 
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+	  
+  <!-- =======================================================
+  * Template Name: AIIMS, New Delh - v4.7.0
+  * Template URL: https://bootstrapmade.com/AIIMS, New Delh-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      
+      <div class="d-flex align-items-center">
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <nav id="navbar" class="navbar order-last order-lg-0">
+     <ul id="nav">
+                  <li><a class="nav-link scrollto active"  href="{% url 'home' %}">Home</a></li>
+                  <li><a class="nav-link scrollto " href="{% url 'animation' %}">Convertor</a></li>
+                  {% if not user.is_authenticated %}
+                  <li><a class="nav-link scrollto " href="{% url 'signup' %}">Sign Up</a></li>
+                  {% endif %}
+                  {% if user.is_authenticated %}
+                  <li><a class="nav-link scrollto " href="{% url 'logout' %}">Log-Out</a></li>
+                  {% else %}
+                    <li><a class="nav-link scrollto " href="{% url 'login' %}">Log-in</a></li>
+                  {% endif %}
+                  <li><a class="nav-link scrollto " href="{% url 'contact' %}">Contact</a></li>
+                  <li><a class="nav-link scrollto " href="{% url 'about' %}">About</a></li>
+                </ul>
+                
+              <div class="wrapper" >
+                {% block content %}
+                {% endblock %}
+              </div>
+        <!--          <ul>
+                          <li><a class="nav-link scrollto " href="/">Home</a></li>
+                          <li><a class="nav-link scrollto" href="/about">About</a></li>
+                          <li><a class="nav-link scrollto" href="/services">Services</a></li>
+                          <li><a class="nav-link scrollto" href="/departments">Departments</a></li>
+                          <li><a class="nav-link scrollto" href="/doctors">Doctors</a></li>
+                          <li><a class="nav-link scrollto" href="/signin_user">Search</a></li>
+                          <li class="dropdown"><a href="/"><span>Sign up / LogIN</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                              <li><a href="/register">Register</a></li>
+                              <li><a href="/signin">Log IN</a></li>
+                            </ul>
+                          </li>
+                          <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+                        </ul>
+                        <i class="bi bi-list mobile-nav-toggle"></i>
+                      </nav>
+                    -->   
+                <!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <style>
+            .margin-top {
+              margin: 100px;
+              padding: 10;
+              border: 0;
+              outline: 0;
+              font-size: 100%;
+              vertical-align: baseline;
+              background: transparent;
+          }
+        </style>
+        <div class="margin-top">
+        </div>
+          <h2>About Us</h2>
+          <p>
+            Creating a country imbued with a scientific culture was Jawaharlal Nehru's dream, and immediately after independence he prepared a grand design to achieve it. Among the temples of modern India which he designed, was a centre of excellence in the medical sciences. Nehru's dream was that such a centre would set the pace for medical education and research in Southeast Asia , and in this he had the wholehearted support of his Health Minister, Rajkumari Amrit Kaur.
+          </p>
+          
+          </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="{% static 'img/about.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Introduction Of AIIMS</h3>
+            <p class="fst-italic">
+              All-India Institute of Medical Sciences was established as an institution of national importance by an Act of Parliament with the objects to develop patterns of teaching in Undergraduate and Post-graduate Medical Education in all its branches so as to demonstrate a high standard of Medical Education in India; to bring together in one place educational facilities of the highest order for the training of personnel in all important branches of health activity; and to attain self-sufficiency in Post-graduate Medical Education.
+            </p>
+            <h4>Objectives of AIIMS</h4>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> To develop a pattern of teaching in undergraduate and postgraduate medical education in all its branches so as to demonstrate high standard of medical education to all medical colleges and other allied institutions in India.</li>
+              <li><i class="bi bi-check-circle"></i> To bring together in one place educational facilities of the highest order for the training of the personnel in all important branches of the health activity.</li>
+              <li><i class="bi bi-check-circle"></i> To attain self sufficiency in postgraduate in medical education.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-user-md"></i>
+              <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
+              <br>
+              <h3> Doctors</h3>
+              <a href="/">Find out more &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="far fa-hospital"></i>
+              <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="1" class="purecounter"></span>
+              <br>
+              <h3> Departments</h3>
+              <a href="/">Find out more &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-flask"></i>
+              <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1" class="purecounter"></span>
+              <br>
+              <h3> Research Lab</h3>
+              <a href="/">Find out more &raquo;</a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <i class="fas fa-award"></i>
+              <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
+              <br>
+              <h3> Awards</h3>
+              <a href="/">Find out more &raquo;</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
+            <div class="icon-box mt-5 mt-lg-0">
+              <i class="bx bx-receipt"></i>
+              <h4>Est labore ad</h4>
+              <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+            </div>
+            <div class="icon-box mt-5">
+              <i class="bx bx-cube-alt"></i>
+              <h4>Harum esse qui</h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+            </div>
+            <div class="icon-box mt-5">
+              <i class="bx bx-images"></i>
+              <h4>Aut occaecati</h4>
+              <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+            </div>
+            <div class="icon-box mt-5">
+              <i class="bx bx-shield"></i>
+              <h4>Beatae veritatis</h4>
+              <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+            </div>
+          </div>
+          <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("static/img/features.jpg");' data-aos="zoom-in"></div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="fas fa-pills"></i></div>
+            <h4 class="title"><a href="">Dolor Sitema</a></h4>
+            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-hospital-user"></i></div>
+            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><i class="fas fa-dna"></i></div>
+            <h4 class="title"><a href="">Magni Dolores</a></h4>
+            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="fas fa-wheelchair"></i></div>
+            <h4 class="title"><a href="">Nemo Enim</a></h4>
+            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-notes-medical"></i></div>
+            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
+            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+  </main><!-- End #main -->
+
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-info">
+            <h3>AIIMS, New Delhi</h3>
+            <p>
+              All India Institute of Medical Sciences<br>
+              Ansari Nagar, New Delhi - 110029<br><br>
+              <strong> Board Number:</strong> +91-11-26588500 / 26588700<br>
+              <strong> Fax :</strong> +91-11-26588663 / 26588641<br>
+            </p>
+            
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/aiims_newdelhi" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/DelhiAIIMS/" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/aiims_delhi/?hl=en" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <!--<a href="/" class="google-plus"><i class="bx bxl-skype"></i></a>-->
+              <a href="https://www.linkedin.com/school/all-india-institute-of-medical-sciences/?originalSubdomain=in" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/about">About us</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/services">Services</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/">Terms of service</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="/">Service 1</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/">Service 2</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/">Service 3</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/">Service 4</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/">Service 5</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 Footer">
+            <h4><strong>AIIMS</strong> Interactive Map</h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2s!4v1495086015806!6m8!1m7!1s57Hpyc2SyDx-VDN5EEKh7Q!2m2!1d28.56745188492729!2d77.20837225037491!3f131.28!4f-15.900000000000006!5f0.7820865974627469" width="400" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong><span>AIIMS, New Delhi</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/AIIMS, New Delhi-free-bootstrap-theme/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </div>
+</footer><!-- End Footer --> 
+
+
+<div id="preloader"></div>
+<a href="/" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'vendor/purecounter/purecounter.js' %}"></script>
+<script src="{% static 'vendor/aos/aos.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
