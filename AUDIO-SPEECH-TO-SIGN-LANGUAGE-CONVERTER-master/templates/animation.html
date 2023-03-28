@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <title>SignHub</title>
- 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
@@ -67,17 +67,82 @@
 			height: 50px;
 			margin-right: auto;
 			}
+
+			.container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 10px;
+				background-color: #f2f2f2;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+				transition: box-shadow 0.3s ease;
+				cursor: pointer;
+				width: 80%px;
+				height: 40%;
+				overflow: hidden;
+				margin:5%;
+			}
+			.container:hover {
+				box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+			}
+			.button-30 {
+				margin-center : auto;
+				align-items: center;
+				appearance: none;
+				background-color: #FCFCFD;
+				border-radius: 10px;
+				border-width: 0;
+				box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+				background-color: #000000;
+				color: #ffffff;
+				border-color: #04AA6D;
+				cursor: pointer;
+				display: inline-flex;
+				font-family: 'Lora', serif;
+				height: 48px;
+				justify-content: center;
+				line-height: 1;
+				list-style: none;
+				overflow: hidden;
+				padding-left: 16px;
+				padding-right: 16px;
+				position: relative;
+				text-align: left;
+				text-decoration: none;
+				transition: box-shadow .15s,transform .15s;
+				user-select: none;
+				-webkit-user-select: none;
+				touch-action: manipulation;
+				white-space: nowrap;
+				will-change: box-shadow,transform;
+				font-size: 45px;
+			}
+	
+			.button-30:focus {
+				box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+			}
+	
+			.button-30:hover {
+				box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+				transform: translateY(-2px);
+			}
+	
+			.button-30:active {
+				box-shadow: #D6D6E7 0 3px 7px inset;
+				transform: translateY(2px);
+			}
+			  
 		</style>
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 	</head>
 	<body>
-	<div class="split left">
-		<h2 align="center">Enter Text or Use Mic</h2>
+	<div class="container">
+		<h4 align="center">Enter Text or Use Mic</h4>
 		<br>
 			<form action="" method="post" align="left">
 			{% csrf_token %}
 						<input type="text" name="sen" class="mytext" id="speechToText" placeholder="">
-						<button type="button" name="button" class="mic" onclick="record()"><img src="{% static 'mic3.png' %}" height="32px" width="38px" /></button>
+						<button class="button" name="button" class="mic" onclick="record()"><img src="{% static 'mic3.png' %}" height="32px" width="38px" /></button>
 						&nbsp&nbsp&nbsp&nbsp
 						<input type="submit" name="submit" class="submit">
 
@@ -98,25 +163,28 @@
 					</ul>
 				</td>
 			</tr>
-		</table></div>
+		</table>
+	</div>
 
-	<div class="split right">
-	<h2 align="center">Sign Language Animation</h2>
+	<div class="container">
+		<h4 align="center">Sign Language Animation</h4>
 
-	<div style="text-align:center">	&nbsp&nbsp
-  	<button class="submit" onclick="playPause()">Play/Pause</button>
-  	<!--  LETS USE ONLY PLAY PAUSE BUTTON WITH 720 *420 ,IT FITS THE SCREEN ASHISH
+		<div style="text-align:center">	&nbsp&nbsp
+		<button class="button-30 btn-outline-success" onclick="playPause()">Play/Pause</button>
+		<!--  LETS USE ONLY PLAY PAUSE BUTTON WITH 720 *420 ,IT FITS THE SCREEN ASHISH
 
-  	<button onclick="makeBig()">Big</button>
-  	<button onclick="makeSmall()">Small</button>
-  	<button onclick="makeNormal()">Normal</button>-->
+		<button onclick="makeBig()">Big</button>
+		<button onclick="makeSmall()">Small</button>
+		<button onclick="makeNormal()">Normal</button>-->
 
 
-  	<video id="videoPlayer" width="600" height="350"  preload="auto" autoplay>
-    	<source src="" type="video/mp4">
-    Your browser does not support HTML5 video.
-  	</video>
-  	</div></div>
+		<video id="videoPlayer" width="600" height="350"  preload="auto" autoplay>
+			<source src="" type="video/mp4">
+		Your browser does not support HTML5 video.
+		</video>
+		</div></div></div>
+	</div>
+	
 </body>
 </html>
 <script>
@@ -197,6 +265,4 @@
 		}
 
 	</script>
-
-
 

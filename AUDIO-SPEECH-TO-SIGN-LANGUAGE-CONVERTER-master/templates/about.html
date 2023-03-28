@@ -58,10 +58,70 @@
 
         /* about css */
 		body {
-			font-family: 'Open Sans', sans-serif;
+			font-family: 'Lora', sans-serif;
 			height: 100vh;
 			margin: 0;
 		}
+		
+		.column {
+			float: left;
+			width: 20%;
+			padding: 0 10px;margin-left: 30px;
+		  }
+		  .container1 {
+			color: #f1f1f1;
+			padding: 50px;
+			text-align: center;
+			background-color: #365b6de3;
+			font-family: cursive;
+		  }
+		  .row {margin: 0 -5px;}
+		  .row:after {
+			content: "";
+			display: table;
+			clear: both;
+		  }
+		  @media screen and (max-width: 600px) {
+			.column {
+			  width: 80%;
+			  display: block;
+			  margin-bottom: 20px;
+			}
+		  }
+		  .card {
+			box-shadow: 8px 8px 8px 0 #000000;
+			padding: 14px;
+			text-align: center;
+			color: #365B6D;
+			background-color: #f1f1f1;
+		  }
+		  .card:hover{
+			box-shadow: 2px 2px 2px 0 #365B6D;
+			padding: 14px;
+			text-align: center;
+			background-color: #f1f1f1;
+		  }
+		  .fa {
+			padding: 20px;
+			font-size: 30px;
+			width: 30px;
+			text-align: center;
+			text-decoration: none;
+			margin: 5px 2px;
+			border-radius: 100px;
+		  }
+		  .fa:hover {
+			  opacity: 0.7;
+			  border-radius: 30px;
+		  }
+		  .fa-twitter {
+			background: #55ACEE;
+			color: white;
+		  }
+		  .fa-linkedin {
+			background: #007bb5;
+			color: white;
+		  }
 		.container {
 			display: flex;
 			justify-content: center;
@@ -131,7 +191,53 @@
 			<img src="{% static 'img/handsign.gif'%}" alt="Image">
 		</div>
 	</div>
-
+	<div class="container1">
+		<h2>Meet the Team</h2>
+		<p> 
+		  Ahoy there! Let me tell you about a group of rockstar engineering students from IGDTUW College Delhi who decided to use their brains and brawn to help society in a unique way. These third-year geniuses put their heads together to create a system that converts speech into sign language!
+		  Imagine being able to communicate with someone who is hearing impaired without having to learn sign language yourself. That's what these clever engineers have achieved! They've made life a little easier for those who use sign language as their primary means of communication.
+		  It's almost like magic - you speak, and the system translates your words into signs that anyone can understand. It's like having your own personal sign language interpreter on hand!
+		  But that's not all. These clever students have done it with style and flair, injecting a healthy dose of fun and humor into the project. They've proved that engineering doesn't have to be all boring and stuffy - it can be cool and exciting too!
+		  
+		  In short, these students are the real deal. They've used their skills to make a real difference in the world, all while having a blast. They're definitely the ones to watch out for in the future!
+		  
+		  
+		  
+		  </p>
+		<div class="row">
+		  <div class="column">
+			<div class="card">
+			  <h3>Divyangna Bharti</h3>
+			  <a href="https://twitter.com/divyangna444" class="fa fa-twitter"></a>
+			  <a href="https://www.linkedin.com/in/divyangna-bharti-57b1b0229/" class="fa fa-linkedin"></a>     
+			</div>
+		  </div>
+		
+		  <div class="column">
+			<div class="card">
+			  <h3>Vaishali</h3>
+			  <a href="https://twitter.com/Vaishali2624791" class="fa fa-twitter"></a>
+			  <a href="https://www.linkedin.com/in/vaishali681/" class="fa fa-linkedin"></a>     
+			</div>
+		  </div>
+		  
+		  <div class="column">
+			<div class="card">
+			  <h3>Deepali Thakur</h3>
+			  <a href="https://twitter.com/deepaliii05" class="fa fa-twitter"></a>
+			  <a href="https://www.linkedin.com/in/deepali-thakur/" class="fa fa-linkedin"></a>     
+			</div>
+		  </div>
+		  
+		  <div class="column">
+			<div class="card">
+			  <h3>Kanika Kanojia</h3>
+			  <a href="#" class="fa fa-twitter"></a>
+			  <a href="https://www.linkedin.com/in/kanika-kanojia-348620207/" class="fa fa-linkedin"></a>     
+			</div>
+		  </div>
+		</div>  
+	  </div>
 </body>
 </html>
 
