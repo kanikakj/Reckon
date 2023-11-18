@@ -1,4 +1,5 @@
-![image](https://github.com/kanikakj/Reckon-SignHub/assets/77913500/930b2dc7-dc7b-4087-a298-2e0a173b3a3b)# Reckon-SignHub
+
+# Reckon-SignHub
 A web application that takes in live audio speech recording as input, converts it into text, and displays the relevant Indian Sign Language animations.
 
 >- Front-end using HTML, CSS, JavaScript.
