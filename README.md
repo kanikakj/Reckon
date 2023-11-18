@@ -25,11 +25,17 @@ using the Blender 3D tool.
 6. Speech is going to be processed and respective animated outputs are shown accordingly and it also supports entering text manually.
 
 ## Snapshots of the project
-
+Landing Page: 
 ![landing page](https://github.com/kanikakj/Reckon-SignHub/assets/77913500/a9ab3d0b-b214-4fa2-9876-020cef27e601)
 
+Main Page: WE CARE 
 ![we care](https://github.com/kanikakj/Reckon-SignHub/assets/77913500/08275bf8-a49f-4186-89e1-694550e38a10)
 
+Sign Up:
+![sign up](https://github.com/kanikakj/Reckon-SignHub/assets/77913500/ab243b1b-7633-450d-aac5-a3a1c72523a5)
 
+Audio-Text-Sign Converter:
+![convert](https://github.com/kanikakj/Reckon-SignHub/assets/77913500/5211b06b-91c5-4cc8-8d24-426677995fb2)
 
-
+Sign language animation using Blender 3D Tool : 
+![play pause](https://github.com/kanikakj/Reckon-SignHub/assets/77913500/8f5763d5-d604-4b4f-8a93-b08fffd47a31)
